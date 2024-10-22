@@ -1,0 +1,8 @@
+<div>
+    <app-post-card *ngFor="let post of posts" [postId]="post.id">
+        <img [src]="post.image" [alt]="post.title">
+        <p>{{ post.title | uppercase }}</p>
+        <p>{{ post.description }}</p>
+        <p>{{ post.date | date }}</p>
+    </app-post-card>
+</div>

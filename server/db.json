@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": "1", 
+      "title": "Magician Cat", 
+      "description": "A cat that had studied the hidden knowledge and now is capable to use the magic of tuna.", 
+      "image": "https://img-9gag-fun.9cache.com/photo/a6V8Bbq_460s.jpg",
+      "date": "2024-10-15"
+    },
+    {
+      "id": "2", 
+      "title": "Waton Dog", 
+      "description": "A fat dog that reminder the words; Todo chiquito, to gordito.", 
+      "image": "https://th.bing.com/th/id/OIP.Vvnu_-AApTP_zfO9-csmqAHaHU?rs=1&pid=ImgDetMain",
+      "date": "2024-10-15"
+    }
+  ]
+}
