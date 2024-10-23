@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostCardComponent } from '../../components/post-card/post-card.component';
-import { CommonModule } from '@angular/common';
 import Post from '../../models/Post';
 import { PostsServiceService } from '../../services/posts-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-post-list',
@@ -18,8 +18,9 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.postsService.getAllPosts()
-      .subscribe((data: any) => this.posts = data)
-  }
-
-  
+      .subscribe((data: any) => {
+        this.posts = data;
+        console.log(this.posts);
+      });
+  }  
 }

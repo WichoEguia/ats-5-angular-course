@@ -1,7 +1,14 @@
-<div>
-    <ng-content></ng-content>
-    <div class="actions">
-        <button type="button">EDIT</button>
-        <button type="button" (click)="viewPost()">VIEW</button>
+<div class="post-card">
+    <div class="post-image-banner" [style.background-image]="'url(' + post?.image + ')'"></div>
+    <div class="post-content">
+        <div class="post-header">
+            <p (click)="viewPost()">{{ post?.title | uppercase }}</p>
+        </div>
+        <div class="post-body">
+            <div class="post-description">
+                <p>{{ post?.description }}</p>
+            </div>
+            <p class="post-date">{{ post?.date | date }}</p>
+        </div>
     </div>
 </div>
