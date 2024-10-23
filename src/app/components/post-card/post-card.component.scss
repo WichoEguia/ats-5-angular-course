@@ -20,6 +20,7 @@
 .post-card {
     position: relative;
     color: white;
+    margin: 10px 0;
 }
 
 .post-header p {
@@ -28,6 +29,9 @@
     &:hover {
         text-decoration: underline;
         cursor: pointer;
+    }
+    & > span {
+        font-size: 0.95rem;
     }
 }
 

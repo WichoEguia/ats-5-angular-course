@@ -2,7 +2,12 @@
     <div class="post-image-banner" [style.background-image]="'url(' + post?.image + ')'"></div>
     <div class="post-content">
         <div class="post-header">
-            <p (click)="viewPost()">{{ post?.title | uppercase }}</p>
+            <p (click)="viewPost()">
+                {{ post?.title | uppercase }}
+                <span class="material-symbols-outlined">
+                    open_in_new
+                </span>
+            </p>
         </div>
         <div class="post-body">
             <div class="post-description">
