@@ -1,5 +1,5 @@
 <li class="nav-item">
-    <a [routerLink]="routerLink"class="nav-link" [ngClass]="isActive ? 'active' : ''">
+    <a [routerLink]="routerLink"class="nav-link" [ngClass]="{'active': isActive, 'disabled': isDisabled}">
         <ng-content></ng-content>
     </a>
 </li>

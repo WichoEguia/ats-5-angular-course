@@ -1,9 +1,9 @@
-<div class="post-card">
-    <div class="post-image-banner" [style.background-image]="'url(' + post?.image + ')'"></div>
+<div class="post-card" *ngIf="post">
+    <div class="post-image-banner" [style.background-image]="'url(' + post.image + ')'"></div>
     <div class="post-content">
         <div class="post-header">
             <p (click)="viewPost()">
-                {{ post?.title | uppercase }}
+                {{ post.title | uppercase }}
                 <span class="material-symbols-outlined">
                     open_in_new
                 </span>
@@ -11,9 +11,10 @@
         </div>
         <div class="post-body">
             <div class="post-description">
-                <p>{{ post?.description }}</p>
+                <p>{{ post.description }}</p>
             </div>
-            <p class="post-date">{{ post?.date | date }}</p>
+            <app-date>{{ post.date | date }}</app-date>
         </div>
     </div>
+    <app-action-buttons [floatButtons]="true"></app-action-buttons>
 </div>

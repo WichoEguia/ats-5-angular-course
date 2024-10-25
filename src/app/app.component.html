@@ -1,9 +1,12 @@
 <header>
   <app-navigation>
-    <app-nav-item routerLink="/" [isActive]="true">Places</app-nav-item>
-    <app-nav-item routerLink="/">Fictional places</app-nav-item>
-    <app-nav-item routerLink="/">Lifestyle</app-nav-item>
-    <app-nav-item routerLink="/">Hidden knowledge</app-nav-item>
+    <app-nav-item
+      *ngFor="let item of navigation"
+      [routerLink]="item.path"
+      [isActive]="item.isActive"
+      [isDisabled]="item.isDisabled">
+      {{ item.name }}
+    </app-nav-item>
   </app-navigation>
 </header>
 <main class="container">

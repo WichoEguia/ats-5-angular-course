@@ -11,5 +11,6 @@ import { RouterModule } from '@angular/router';
 })
 export class NavItemComponent {
   @Input() routerLink: string = "";
-  @Input() isActive: boolean = false
+  @Input() isActive: boolean = false;
+  @Input() isDisabled: boolean = false;
 }

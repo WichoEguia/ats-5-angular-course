@@ -4,11 +4,13 @@ import Post from '../../models/Post';
 import { PostsServiceService as PostsService } from '../../services/posts-service.service';
 import { CommonModule } from '@angular/common';
 import { PostFormComponent } from '../../sections/post-form/post-form.component';
+import { DateComponent } from '../../components/date/date.component';
+import { ActionButtonsComponent } from '../../components/action-buttons/action-buttons.component';
 
 @Component({
   selector: 'app-post-view',
   standalone: true,
-  imports: [CommonModule, PostFormComponent],
+  imports: [CommonModule, PostFormComponent, DateComponent, ActionButtonsComponent],
   templateUrl: './post-view.component.html',
   styleUrls: [
     './post-view.component.scss',
