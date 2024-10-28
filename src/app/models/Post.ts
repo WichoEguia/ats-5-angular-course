@@ -4,4 +4,5 @@ export default interface Post {
     description: string;
     image: string;
     date: Date;
+    category: "real" | "fiction" | "meme"
 }

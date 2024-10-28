@@ -5,21 +5,48 @@
       "title": "Magician Cat", 
       "description": "A cat that had studied the hidden knowledge and now is capable to use the magic of tuna.", 
       "image": "https://img-9gag-fun.9cache.com/photo/a6V8Bbq_460s.jpg",
-      "date": "2024-10-15"
+      "date": "2024-10-15",
+      "category": "meme"
     },
     {
       "id": "2", 
       "title": "Waton Dog", 
       "description": "A fat dog that reminder the words; Todo chiquito, to gordito.", 
       "image": "https://th.bing.com/th/id/OIP.Vvnu_-AApTP_zfO9-csmqAHaHU?rs=1&pid=ImgDetMain",
-      "date": "2024-10-15"
+      "date": "2024-10-15",
+      "category": "meme"
     },
     {
       "id": "3", 
       "title": "Anor Londo", 
       "description": "ODIO A LOS ARQUEROS", 
       "image": "https://th.bing.com/th/id/OIP.gUY5C__rUXHX-UyHjKp3PQHaEK?rs=1&pid=ImgDetMain",
-      "date": "2024-10-22"
+      "date": "2024-10-22",
+      "category": "fiction"
+    },
+    {
+      "id": "4", 
+      "title": "Mexico", 
+      "description": "lorem", 
+      "image": "https://th.bing.com/th/id/OIP.JAYKLe1nC8-rcVnXel0dIgHaE8?rs=1&pid=ImgDetMain",
+      "date": "2024-10-21",
+      "category": "real"
+    },
+    {
+      "id": "5", 
+      "title": "Belgica", 
+      "description": "ipsum", 
+      "image": "https://www.fatosdesconhecidos.com.br/wp-content/uploads/2018/07/bruges-belgica.jpg",
+      "date": "2024-10-22",
+      "category": "real"
+    },
+    {
+      "id": "6", 
+      "title": "Rusia", 
+      "description": "dolor", 
+      "image": "https://th.bing.com/th/id/R.318c070e41ba66574b31d99ebf4fd1c2?rik=HUPxeRW8K7e35Q&riu=http%3a%2f%2fwww.alealetours.com%2fwp-content%2fuploads%2f2018%2f03%2fkmkm.png&ehk=NIsF0TbVrCh%2fGi1vj4VueXW4crSrET2pMeKUSgh0Nkw%3d&risl=&pid=ImgRaw&r=0",
+      "date": "2024-10-22",
+      "category": "real"
     }
   ]
 }

@@ -1,13 +1,9 @@
 <header>
-  <app-navigation>
-    <app-nav-item
-      *ngFor="let item of navigation"
-      [routerLink]="item.path"
-      [isActive]="item.isActive"
-      [isDisabled]="item.isDisabled">
-      {{ item.name }}
-    </app-nav-item>
-  </app-navigation>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="">Travel APP</a>
+    </div>
+  </nav>  
 </header>
 <main class="container">
   <router-outlet />

@@ -18,6 +18,6 @@ export class PostCardComponent {
   constructor(private router: Router) { }
 
   viewPost() {
-    this.router?.navigate(['/posts', this.post?.id]);
+    this.router?.navigate(['/locations', this.post?.id]);
   }
 }

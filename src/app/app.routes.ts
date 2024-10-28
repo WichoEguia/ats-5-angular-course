@@ -5,15 +5,15 @@ import { PostViewComponent } from './pages/post-view/post-view.component';
 export const routes: Routes = [
     {
         path: "",
-        redirectTo: "posts",
+        redirectTo: "locations",
         pathMatch: "full"
     },
     {
         component: PostListComponent,
-        path: "posts"
+        path: "locations"
     },
     {
         component: PostViewComponent,
-        path: "posts/:id"
+        path: "locations/:id"
     }
 ];

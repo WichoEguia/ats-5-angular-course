@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,7 +10,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav-item.component.scss'
 })
 export class NavItemComponent {
-  @Input() routerLink: string = "";
-  @Input() isActive: boolean = false;
-  @Input() isDisabled: boolean = false;
+  @Input() tab: any;
+
+  @Output() tabEvent = new EventEmitter<string>();
+
+  public tabChangeEvent(tabId: string) {
+    this.tabEvent.emit(tabId);
+  }
 }

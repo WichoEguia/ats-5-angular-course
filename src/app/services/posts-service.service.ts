@@ -11,11 +11,11 @@ export class PostsServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllPosts() {
-    return this.http.get(`${this.baseUrl}/posts`);
+  public getAllPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.baseUrl}/posts`);
   }
 
-  public getPost(postId: string) {
-    return this.http.get(`${this.baseUrl}/posts/${postId}`);
+  public getPost(postId: string): Observable<Post> {
+    return this.http.get<Post>(`${this.baseUrl}/posts/${postId}`);
   }
 }
