@@ -19,6 +19,10 @@ export class PostsServiceService {
     return this.http.get<Post>(`${this.baseUrl}/posts/${postId}`);
   }
 
+  public upsertPost(postData: Post) {
+    return this.http.put<Post>(`${this.baseUrl}/posts/${postData.id}`, postData);
+  }
+
   public deletePost(postId: string): Observable<Post> {
     return this.http.delete<Post>(`${this.baseUrl}/posts/${postId}`);
   }

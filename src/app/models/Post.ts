@@ -1,9 +1,9 @@
 export default interface Post {
-    id: string;
+    id?: string;
     title: string;
     description: string;
     image: string;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt?: string;
     category: "real" | "fiction" | "meme"
 }
