@@ -16,5 +16,11 @@
             <app-date>{{ post.date | date }}</app-date>
         </div>
     </div>
-    <app-action-buttons [floatButtons]="true" (deletePostEvent)="deletePost()"></app-action-buttons>
+    <app-action-buttons [floatButtons]="true" (deletePostEvent)="deletePost()" (editPostEvent)="editPost(content)"></app-action-buttons>
 </div>
+
+<ng-template #content>
+    <app-modal-container [modalTitle]="'Edit Postal'" (closeModalEvent)="modalRef?.close($event)">
+        <app-post-form [post]="post"></app-post-form>
+    </app-modal-container>
+</ng-template>

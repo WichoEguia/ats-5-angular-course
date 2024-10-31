@@ -10,12 +10,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ActionButtonsComponent {
   @Input() floatButtons: boolean = false;
-  @Input() postId: string = "";
 
-  // @Output() edit = new EventEmitter<string>();
+  @Output() editPostEvent = new EventEmitter<void>();
   @Output() deletePostEvent = new EventEmitter<void>();
 
   public triggerDeletePost() {
     this.deletePostEvent.emit();
+  }
+
+  public triggerEditPost() {
+    this.editPostEvent.emit();
   }
 }
