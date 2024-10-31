@@ -18,4 +18,8 @@ export class PostsServiceService {
   public getPost(postId: string): Observable<Post> {
     return this.http.get<Post>(`${this.baseUrl}/posts/${postId}`);
   }
+
+  public deletePost(postId: string): Observable<Post> {
+    return this.http.delete<Post>(`${this.baseUrl}/posts/${postId}`);
+  }
 }

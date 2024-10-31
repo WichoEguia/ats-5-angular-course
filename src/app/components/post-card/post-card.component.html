@@ -16,5 +16,5 @@
             <app-date>{{ post.date | date }}</app-date>
         </div>
     </div>
-    <app-action-buttons [floatButtons]="true"></app-action-buttons>
+    <app-action-buttons [floatButtons]="true" (deletePostEvent)="deletePost()"></app-action-buttons>
 </div>

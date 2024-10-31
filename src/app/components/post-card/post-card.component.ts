@@ -4,6 +4,7 @@ import Post from '../../models/Post';
 import { CommonModule } from '@angular/common';
 import { DateComponent } from '../date/date.component';
 import { ActionButtonsComponent } from '../action-buttons/action-buttons.component';
+import { PostsServiceService } from '../../services/posts-service.service';
 
 @Component({
   selector: 'app-post-card',
@@ -15,9 +16,16 @@ import { ActionButtonsComponent } from '../action-buttons/action-buttons.compone
 export class PostCardComponent {
   @Input() post?: Post;
   
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router, 
+    private postService: PostsServiceService
+  ) { }
 
   viewPost() {
     this.router?.navigate(['/locations', this.post?.id]);
+  }
+
+  deletePost() {
+    this.postService.deletePost(this.post?.id as string);
   }
 }
