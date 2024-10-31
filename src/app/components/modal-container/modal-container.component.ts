@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-modal-container',
@@ -11,9 +11,14 @@ export class ModalContainerComponent {
   @Input() modalTitle: string = "";
 
   @Output() closeModalEvent = new EventEmitter<string>();
+  @Output() submitEvent = new EventEmitter<void>();
 
   public triggerModalClose(reason: string) {
-    console.log('Close Modal');
     this.closeModalEvent.emit(reason);
+  }
+
+  public triggerSubmit() {
+    this.submitEvent.emit();
+    this.triggerModalClose("Submit button");
   }
 }

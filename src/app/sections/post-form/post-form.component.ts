@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import Post from '../../models/Post';
 
 @Component({

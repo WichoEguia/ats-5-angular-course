@@ -1,4 +1,4 @@
-import { Component, inject, Input, TemplateRef } from '@angular/core';
+import { Component, ContentChild, inject, Input, TemplateRef, ViewChild } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import Post from '../../models/Post';
 import { CommonModule } from '@angular/common';
@@ -24,11 +24,14 @@ import { ModalContainerComponent } from '../modal-container/modal-container.comp
   styleUrl: './post-card.component.scss'
 })
 export class PostCardComponent {
+  @Input() post?: Post;
+
+  @ViewChild('content') content!: TemplateRef<any>;
+  @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
+  
   public closeResult: string = "";
   public modalRef?: NgbModalRef;
 
-  @Input() post?: Post;
-  
   constructor(
     private router: Router, 
     private postService: PostsServiceService,
@@ -43,9 +46,9 @@ export class PostCardComponent {
     this.postService.deletePost(this.post?.id as string);
   }
 
-  editPost(content: TemplateRef<any>) {
+  editPost() {
     console.log(this.post?.id);
-    this.modalRef = this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', centered: true });
+    this.modalRef = this.modalService.open(this.content, { ariaLabelledBy: 'modal-basic-title', centered: true });
     this.modalRef.result.then(
       (result) => {
         console.log(`Closed with: ${result}`);        
@@ -53,7 +56,9 @@ export class PostCardComponent {
       (reason) => {
         console.log(`Dismissed ${this.getDismissReason(reason)}`);
       },
-    );
+    ).finally(() => {
+      this.postFormComponent = undefined;
+    });
   }
 
   private getDismissReason(reason: any): string {
@@ -66,4 +71,8 @@ export class PostCardComponent {
 				return `with: ${reason}`;
 		}
 	}
+
+  public triggerSubmit() {
+    this.postFormComponent?.onPostSubmit();
+  }
 }

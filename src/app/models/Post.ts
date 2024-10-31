@@ -3,6 +3,7 @@ export default interface Post {
     title: string;
     description: string;
     image: string;
-    date: Date;
+    createdAt: Date;
+    updatedAt: Date;
     category: "real" | "fiction" | "meme"
 }

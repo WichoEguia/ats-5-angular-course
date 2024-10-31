@@ -13,14 +13,17 @@
             <div class="post-description">
                 <p>{{ post.description }}</p>
             </div>
-            <app-date>{{ post.date | date }}</app-date>
+            <div class="dates">
+                <app-date>Created at: {{ post.createdAt | date }}</app-date>
+                <app-date *ngIf="post.updatedAt">Updated at: {{ post.updatedAt | date }}</app-date>
+            </div>
         </div>
     </div>
-    <app-action-buttons [floatButtons]="true" (deletePostEvent)="deletePost()" (editPostEvent)="editPost(content)"></app-action-buttons>
+    <app-action-buttons [floatButtons]="true" (deletePostEvent)="deletePost()" (editPostEvent)="editPost()"></app-action-buttons>
 </div>
 
 <ng-template #content>
-    <app-modal-container [modalTitle]="'Edit Postal'" (closeModalEvent)="modalRef?.close($event)">
+    <app-modal-container [modalTitle]="'Edit Postal'" (closeModalEvent)="modalRef?.close($event)" (submitEvent)="triggerSubmit()">
         <app-post-form [post]="post"></app-post-form>
     </app-modal-container>
 </ng-template>

@@ -1,10 +1,10 @@
-<form [formGroup]="postForm" (submit)="onPostSubmit()">
+<form [formGroup]="postForm">
     <div>
         <div>
             <label for="post-title">Title</label>
         </div>
         <div>
-            <input type="text" id="post-title" formControlName="title">
+            <input type="text" class="form-control" id="post-title" formControlName="title">
         </div>
     </div>
 
@@ -13,7 +13,7 @@
             <label for="post-description">Description</label>
         </div>
         <div>
-            <input type="text" id="post-description" formControlName="description">
+            <textarea class="form-control" id="post-description" formControlName="description"></textarea>
         </div>
     </div>
 
@@ -22,20 +22,16 @@
             <label for="post-image">Image URL</label>
         </div>
         <div>
-            <input type="text" id="post-image" formControlName="image">
+            <input type="text" class="form-control" id="post-image" formControlName="image">
         </div>
     </div>
 
     <div>
         <div>
-            <label for="post-image">Category</label>
+            <label for="post-category">Category</label>
         </div>
         <div>
-            <input type="text" id="post-image" formControlName="category">
+            <input type="text" class="form-control" id="post-category" formControlName="category">
         </div>
-    </div>
-
-    <div>
-        <button type="submit">SEND</button>
     </div>
 </form>
