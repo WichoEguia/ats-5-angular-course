@@ -4,7 +4,8 @@
         <div class="post-content col-lg-6 col-md-12">
             <p class="post-title font-weight-bold">{{ post.title }}</p>
             <p>{{ post.description }}</p>
-            <app-date>{{ post.date | date }}</app-date>
+            <app-date>Created at {{ post.createdAt | date }}</app-date>
+            <app-date *ngIf="post.updatedAt">Updated at: {{ post.updatedAt | date }}</app-date>
             <app-action-buttons></app-action-buttons>
         </div>
     </div>
