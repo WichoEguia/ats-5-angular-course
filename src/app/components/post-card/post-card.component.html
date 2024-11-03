@@ -19,11 +19,18 @@
             </div>
         </div>
     </div>
-    <app-action-buttons [floatButtons]="true" (deletePostEvent)="deletePost()" (editPostEvent)="editPost()"></app-action-buttons>
+    <app-action-buttons 
+        [floatButtons]="true" 
+        (deletePostEvent)="deletePost()" 
+        (editPostEvent)="editPost()"
+    ></app-action-buttons>
 </div>
 
 <ng-template #content>
-    <app-modal-container [modalTitle]="'Edit Postal'" (closeModalEvent)="modalRef?.close($event)" (submitEvent)="triggerSubmit()">
+    <app-modal-container 
+        [modalTitle]="'Edit Postal'" 
+        (closeModalEvent)="modalRef?.close($event)" 
+        (submitEvent)="triggerSubmit()">
         <app-post-form [post]="post"></app-post-form>
     </app-modal-container>
 </ng-template>

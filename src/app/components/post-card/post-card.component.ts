@@ -24,14 +24,14 @@ import { ModalContainerComponent } from '../modal-container/modal-container.comp
   styleUrl: './post-card.component.scss'
 })
 export class PostCardComponent {
+  public modalRef?: NgbModalRef;
+
   @Input() post?: Post;
 
   @Output() deletePostEvent = new EventEmitter<void>();
 
   @ViewChild('content') content!: TemplateRef<any>;
   @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
-  
-  public modalRef?: NgbModalRef;
 
   constructor(
     private router: Router, 
@@ -44,8 +44,11 @@ export class PostCardComponent {
   }
 
   deletePost() {
-    this.postService.deletePost(this.post?.id as string).subscribe((res) => 
-      console.log('Post deleted'));
+    this.postService.deletePost(this.post?.id as string)
+      .subscribe((res) => {
+        console.log('Post deleted');
+        swal("All Good!", "Post deleted succesfully!", "success");
+      });
     this.deletePostEvent.emit();
   }
 

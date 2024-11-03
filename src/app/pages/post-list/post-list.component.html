@@ -19,8 +19,7 @@
     <app-modal-container 
         [modalTitle]="'Edit Postal'" 
         (closeModalEvent)="modalRef?.close($event)" 
-        (submitEvent)="triggerSubmit()"
-    >
+        (submitEvent)="triggerSubmit()">
         <app-post-form (createdPostEvent)="loadPosts()"></app-post-form>
     </app-modal-container>
 </ng-template>

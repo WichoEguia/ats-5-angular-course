@@ -6,7 +6,19 @@
             <p>{{ post.description }}</p>
             <app-date>Created at {{ post.createdAt | date }}</app-date>
             <app-date *ngIf="post.updatedAt">Updated at: {{ post.updatedAt | date }}</app-date>
-            <app-action-buttons></app-action-buttons>
+            <app-action-buttons 
+                (deletePostEvent)="deletePost()"
+                (editPostEvent)="editPost()">
+            </app-action-buttons>
         </div>
     </div>
 </div>
+
+<ng-template #content>
+    <app-modal-container 
+        [modalTitle]="'Edit Postal'" 
+        (closeModalEvent)="modalRef?.close($event)" 
+        (submitEvent)="triggerSubmit()">
+        <app-post-form [post]="post"></app-post-form>
+    </app-modal-container>
+</ng-template>
