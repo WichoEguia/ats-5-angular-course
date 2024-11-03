@@ -15,14 +15,8 @@
     </div>
     <button 
         (click)="showTheTruth()"
-        *ngIf="hide && isNormalSection()">
-        Unlock hidden section
-    </button>
-
-    <button 
-        (click)="hideTheTruth()"
-        *ngIf="!hide && isNormalSection()">
-        Lock hidden section
+        *ngIf="isNormalSection()">
+        Toggle hidden section
     </button>
 </div>
 

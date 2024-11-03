@@ -37,7 +37,6 @@ export class PostListComponent implements OnInit {
   public posts: Post[] = [];
   public modalRef?: NgbModalRef;
   public tabs: Tab[] = [];
-  public hide: boolean = true;
 
   @ViewChild('content') content!: TemplateRef<any>;
   @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
@@ -130,14 +129,7 @@ export class PostListComponent implements OnInit {
 
   public showTheTruth() {
     const idx = this.tabs.findIndex((t) => t.id === 'meme');
-    this.tabs[idx].isDisabled = true;
-    this.hide = false;
-  }
-
-  public hideTheTruth() {
-    const idx = this.tabs.findIndex((t) => t.id === 'meme');
-    this.tabs[idx].isDisabled = false;
-    this.hide = true;
+    this.tabs[idx].isDisabled = !this.tabs[idx].isDisabled;
   }
 
   public isNormalSection() {
