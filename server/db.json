@@ -29,11 +29,11 @@
     },
     {
       "title": "Mexico",
-      "description": "crayola",
+      "description": "hola crayola",
       "image": "https://th.bing.com/th/id/OIP.JAYKLe1nC8-rcVnXel0dIgHaE8?rs=1&pid=ImgDetMain",
-      "createdAt": "2024-10-21",
       "category": "real",
-      "updatedAt": "Thu Oct 31 2024",
+      "createdAt": "2024-10-21",
+      "updatedAt": "Sat Nov 02 2024",
       "id": "82935694-427b-41fc-a745-008ccdf6a708"
     },
     {
@@ -46,13 +46,13 @@
       "category": "real"
     },
     {
-      "id": "65abbf6c-7c01-426f-8758-400e0fe5ec58",
-      "title": "Rusia",
-      "description": "dolor",
-      "image": "https://th.bing.com/th/id/R.318c070e41ba66574b31d99ebf4fd1c2?rik=HUPxeRW8K7e35Q&riu=http%3a%2f%2fwww.alealetours.com%2fwp-content%2fuploads%2f2018%2f03%2fkmkm.png&ehk=NIsF0TbVrCh%2fGi1vj4VueXW4crSrET2pMeKUSgh0Nkw%3d&risl=&pid=ImgRaw&r=0",
-      "createdAt": "2024-10-22",
-      "updatedAt": null,
-      "category": "real"
+      "id": "a3036ff3-21c9-4297-9785-347c49c54f72",
+      "title": "Argentina",
+      "description": "asdfsda",
+      "image": "https://th.bing.com/th/id/R.75627749c8851dc873240be562a4f67c?rik=FlVPOlsjoOGC7A&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fe%2fe2%2fDock_3%2c_Puerto_Madero%2c_Buenos_Aires%2c_Argentina.jpg&ehk=H83nlnaiarm3fD2435ZRlkx%2fytJWmeIeP4KGEEjn188%3d&risl=1&pid=ImgRaw&r=0",
+      "category": "real",
+      "createdAt": "Sat Nov 02 2024",
+      "updatedAt": "Sat Nov 02 2024"
     }
   ]
 }

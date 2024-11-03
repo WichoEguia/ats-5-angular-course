@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import Post from '../../models/Post';
 import { PostsServiceService } from '../../services/posts-service.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-post-form',
@@ -33,28 +34,31 @@ export class PostFormComponent implements OnInit {
     })
   }
 
-  public onPostSubmit() {
+  public onPostSubmit(type: 'create' | 'update') {
     this.buildPost();
-    this.postService.upsertPost(this.post as Post).subscribe((res) =>
-      console.log('Post updated'));
+    switch (type) {
+      case 'create':
+        this.postService.createPost(this.post as Post).subscribe((res) =>
+          console.log('Post created'));
+        break;
+      case 'update':
+        this.postService.updatePost(this.post as Post).subscribe((res) =>
+          console.log('Post updated'));
+        break;
+    }
   }
 
   public buildPost() {
-    const post: Post = {
-      title: '',
-      description: '',
-      image: '',
-      createdAt: '',
-      category: 'real'
-    };
-    post.title = this.postForm.value.title;
-    post.description = this.postForm.value.description;
-    post.image = this.postForm.value.image;
-    post.category = this.postForm.value.category;
-    post.createdAt = this.post?.createdAt ?? new Date().toDateString();
-    post.updatedAt = this.post?.createdAt ? new Date().toDateString() : undefined;
-    post.id = this.post?.id ?? crypto.randomUUID();
-    this.post = post;
+    if (!this.post) {
+      this.post = {} as Post;
+    }
+    (this.post as Post).title = this.postForm.value.title;
+    (this.post as Post).description = this.postForm.value.description;
+    (this.post as Post).image = this.postForm.value.image;
+    (this.post as Post).category = this.postForm.value.category;
+    (this.post as Post).createdAt = this.post?.createdAt ?? new Date().toDateString();
+    (this.post as Post).updatedAt = this.post?.createdAt ? new Date().toDateString() : undefined;
+    (this.post as Post).id = this.post?.id ?? crypto.randomUUID();
     console.log(this.post);
   }
 }

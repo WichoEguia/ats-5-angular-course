@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { PostCardComponent } from '../../components/post-card/post-card.component';
 import Post from '../../models/Post';
 import { PostsServiceService } from '../../services/posts-service.service';
@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { NavigationComponent } from '../../sections/navigation/navigation.component';
 import { NavItemComponent } from '../../sections/nav-item/nav-item.component';
 import { map } from 'rxjs';
+import { ModalContainerComponent } from '../../components/modal-container/modal-container.component';
+import { PostFormComponent } from '../../sections/post-form/post-form.component';
+import { ModalDismissReasons, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 interface Tab {
   id: string,
@@ -19,11 +22,21 @@ type Category = { [key: string]: Post[] }
 @Component({
   selector: 'app-post-list',
   standalone: true,
-  imports: [CommonModule, PostCardComponent, NavigationComponent, NavItemComponent],
+  imports: [
+    CommonModule, 
+    PostCardComponent, 
+    NavigationComponent, 
+    NavItemComponent, 
+    ModalContainerComponent, 
+    PostFormComponent
+  ],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss'
 })
 export class PostListComponent implements OnInit {
+  @ViewChild('content') content!: TemplateRef<any>;
+  @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
+  
   private categories?: Category;
   public posts: Post[] = [];
   public tabs: Tab[] = [
@@ -51,16 +64,20 @@ export class PostListComponent implements OnInit {
       isActive: false,
       isDisabled: true
     },
-  ]
+  ];
+  public modalRef?: NgbModalRef;
 
-  public constructor(private postsService: PostsServiceService) { }
+  public constructor(
+    private postService: PostsServiceService, 
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
     this.loadPosts();
   }
 
   private loadPosts() {
-    this.postsService.getAllPosts()
+    this.postService.getAllPosts()
       .pipe(
         map((posts: Post[]) =>
           posts.reduce((grouped, post) => {
@@ -96,5 +113,34 @@ export class PostListComponent implements OnInit {
     if (this.categories) {
       this.posts = this.categories[category] || [];
     }
+  }
+
+  public createPost()  {
+    this.modalRef = this.modalService.open(this.content, { ariaLabelledBy: 'modal-basic-title', centered: true });
+    this.modalRef.result.then(
+      (result) => {
+        console.log(`Closed with: ${result}`);        
+      },
+      (reason) => {
+        console.log(`Dismissed ${this.getDismissReason(reason)}`);
+      },
+    ).finally(() => {
+      this.postFormComponent = undefined;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+		switch (reason) {
+			case ModalDismissReasons.ESC:
+				return 'by pressing ESC';
+			case ModalDismissReasons.BACKDROP_CLICK:
+				return 'by clicking on a backdrop';
+			default:
+				return `with: ${reason}`;
+		}
+	}
+
+  public triggerSubmit(type: 'create' | 'update') {
+    this.postFormComponent?.onPostSubmit(type);
   }
 }

@@ -29,7 +29,6 @@ export class PostCardComponent {
   @ViewChild('content') content!: TemplateRef<any>;
   @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
   
-  public closeResult: string = "";
   public modalRef?: NgbModalRef;
 
   constructor(
@@ -43,7 +42,8 @@ export class PostCardComponent {
   }
 
   deletePost() {
-    this.postService.deletePost(this.post?.id as string);
+    this.postService.deletePost(this.post?.id as string).subscribe((res) => 
+      console.log('Post deleted'));
   }
 
   editPost() {
@@ -72,7 +72,7 @@ export class PostCardComponent {
 		}
 	}
 
-  public triggerSubmit() {
-    this.postFormComponent?.onPostSubmit();
+  public triggerSubmit(type: 'create' | 'update') {
+    this.postFormComponent?.onPostSubmit(type);
   }
 }
