@@ -67,7 +67,7 @@ export class PostListComponent implements OnInit {
       },
       {
         id: "meme",
-        name: "Hidden knowledge",
+        name: "Hidden section",
         isActive: false,
         isDisabled: true
       },
