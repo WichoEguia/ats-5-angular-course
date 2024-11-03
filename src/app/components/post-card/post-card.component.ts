@@ -1,10 +1,10 @@
-import { Component, ContentChild, inject, Input, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ContentChild, EventEmitter, inject, Input, Output, TemplateRef, ViewChild } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import Post from '../../models/Post';
 import { CommonModule } from '@angular/common';
 import { DateComponent } from '../date/date.component';
 import { ActionButtonsComponent } from '../action-buttons/action-buttons.component';
-import { PostsServiceService } from '../../services/posts-service.service';
+import { PostsService } from '../../services/posts-service.service';
 import { ModalDismissReasons, NgbModal, NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { PostFormComponent } from '../../sections/post-form/post-form.component';
 import { ModalContainerComponent } from '../modal-container/modal-container.component';
@@ -26,6 +26,8 @@ import { ModalContainerComponent } from '../modal-container/modal-container.comp
 export class PostCardComponent {
   @Input() post?: Post;
 
+  @Output() deletePostEvent = new EventEmitter<void>();
+
   @ViewChild('content') content!: TemplateRef<any>;
   @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
   
@@ -33,7 +35,7 @@ export class PostCardComponent {
 
   constructor(
     private router: Router, 
-    private postService: PostsServiceService,
+    private postService: PostsService,
     private modalService: NgbModal
   ) { }
 
@@ -44,6 +46,7 @@ export class PostCardComponent {
   deletePost() {
     this.postService.deletePost(this.post?.id as string).subscribe((res) => 
       console.log('Post deleted'));
+    this.deletePostEvent.emit();
   }
 
   editPost() {
@@ -72,7 +75,7 @@ export class PostCardComponent {
 		}
 	}
 
-  public triggerSubmit(type: 'create' | 'update') {
-    this.postFormComponent?.onPostSubmit(type);
+  public triggerSubmit() {
+    this.postFormComponent?.onPostSubmit('update');
   }
 }

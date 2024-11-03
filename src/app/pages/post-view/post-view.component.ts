@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Post from '../../models/Post';
-import { PostsServiceService as PostsService } from '../../services/posts-service.service';
+import { PostsService as PostsService } from '../../services/posts-service.service';
 import { CommonModule } from '@angular/common';
 import { PostFormComponent } from '../../sections/post-form/post-form.component';
 import { DateComponent } from '../../components/date/date.component';

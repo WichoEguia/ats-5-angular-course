@@ -1,3 +1,5 @@
+import PostCategory from "./PostCategory";
+
 export default interface Post {
     id?: string;
     title: string;
@@ -5,5 +7,5 @@ export default interface Post {
     image: string;
     createdAt: string;
     updatedAt?: string;
-    category: "real" | "fiction" | "meme"
+    category: PostCategory
 }

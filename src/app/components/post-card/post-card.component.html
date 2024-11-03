@@ -23,7 +23,7 @@
 </div>
 
 <ng-template #content>
-    <app-modal-container [modalTitle]="'Edit Postal'" (closeModalEvent)="modalRef?.close($event)" (submitEvent)="triggerSubmit('update')">
+    <app-modal-container [modalTitle]="'Edit Postal'" (closeModalEvent)="modalRef?.close($event)" (submitEvent)="triggerSubmit()">
         <app-post-form [post]="post"></app-post-form>
     </app-modal-container>
 </ng-template>

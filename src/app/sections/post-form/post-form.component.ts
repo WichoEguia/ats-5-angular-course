@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import Post from '../../models/Post';
-import { PostsServiceService } from '../../services/posts-service.service';
+import { PostsService } from '../../services/posts-service.service';
 import { ThisReceiver } from '@angular/compiler';
 
 @Component({
@@ -16,9 +16,11 @@ export class PostFormComponent implements OnInit {
 
   @Input() post?: Post;
 
+  @Output() createdPostEvent = new EventEmitter<void>();
+
   constructor(
     private formBuilder: FormBuilder,
-    private postService: PostsServiceService
+    private postService: PostsService
   ) {}
 
   public ngOnInit(): void {
@@ -40,6 +42,7 @@ export class PostFormComponent implements OnInit {
       case 'create':
         this.postService.createPost(this.post as Post).subscribe((res) =>
           console.log('Post created'));
+        this.createdPostEvent.emit();
         break;
       case 'update':
         this.postService.updatePost(this.post as Post).subscribe((res) =>
