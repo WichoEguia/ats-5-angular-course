@@ -13,6 +13,17 @@
             <app-post-card [post]="post" (deletePostEvent)="loadPosts()"></app-post-card>
         </div>
     </div>
+    <button 
+        (click)="showTheTruth()"
+        *ngIf="hide && isNormalSection()">
+        Unlock hidden knowledge
+    </button>
+
+    <button 
+        (click)="hideTheTruth()"
+        *ngIf="!hide && isNormalSection()">
+        Lock hidden knowledge
+    </button>
 </div>
 
 <ng-template #content>

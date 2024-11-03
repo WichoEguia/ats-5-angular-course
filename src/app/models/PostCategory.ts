@@ -1,2 +1,2 @@
-type PostCategory = "real" | "fiction" | "meme";
+type PostCategory = "real" | "fiction" | "lifestyle" | "meme";
 export default PostCategory;

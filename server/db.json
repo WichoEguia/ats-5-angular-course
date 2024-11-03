@@ -29,7 +29,7 @@
     },
     {
       "title": "Mexico",
-      "description": "hola crayola",
+      "description": "México, ​ cuyo nombre oficial es Estados Unidos Mexicanos, ​ es un país soberano ubicado en la parte meridional de América del Norte; su capital y ciudad más poblada es la Ciudad de México.",
       "image": "https://th.bing.com/th/id/OIP.JAYKLe1nC8-rcVnXel0dIgHaE8?rs=1&pid=ImgDetMain",
       "category": "real",
       "createdAt": "2024-10-21",
@@ -39,20 +39,54 @@
     {
       "id": "4007121e-47b7-48fc-be95-3a325645f2c0",
       "title": "Belgica",
-      "description": "ipsum",
+      "description": "Bélgica (en neerlandés: België ; en francés: Belgique ; en alemán: Belgien ), oficialmente Reino de Bélgica, es uno de los veintisiete Estados soberanos que forman la Unión Europea, situado en Europa noroccidental.",
       "image": "https://www.fatosdesconhecidos.com.br/wp-content/uploads/2018/07/bruges-belgica.jpg",
       "createdAt": "2024-10-22",
-      "updatedAt": null,
+      "updatedAt": "Sat Nov 02 2024",
       "category": "real"
     },
     {
       "id": "a3036ff3-21c9-4297-9785-347c49c54f72",
       "title": "Argentina",
-      "description": "asdfsda",
+      "description": "Argentina, oficialmente República Argentina, ​ es un país soberano de América del Sur, ubicado en el extremo sur y sudeste de dicho subcontinente. ",
       "image": "https://th.bing.com/th/id/R.75627749c8851dc873240be562a4f67c?rik=FlVPOlsjoOGC7A&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fe%2fe2%2fDock_3%2c_Puerto_Madero%2c_Buenos_Aires%2c_Argentina.jpg&ehk=H83nlnaiarm3fD2435ZRlkx%2fytJWmeIeP4KGEEjn188%3d&risl=1&pid=ImgRaw&r=0",
       "category": "real",
       "createdAt": "Sat Nov 02 2024",
       "updatedAt": "Sat Nov 02 2024"
+    },
+    {
+      "id": "ef9d6d7a-82bf-4b3e-b7bd-cc0190d8f9c9",
+      "title": "Hyrule",
+      "description": "Reino de la princesa zelda",
+      "image": "https://th.bing.com/th/id/OIP.fGBQ03Scr2_y8w3mgDFC5gHaEK?rs=1&pid=ImgDetMain",
+      "category": "fiction",
+      "createdAt": "Sat Nov 02 2024"
+    },
+    {
+      "id": "5218ed4e-64f8-431a-9072-c53da6d73704",
+      "title": "Mushroom kingdom",
+      "description": "Hongos por do quier",
+      "image": "https://th.bing.com/th/id/OIP.25dOhxnZPELD0r_kOHYcoAHaEJ?rs=1&pid=ImgDetMain",
+      "category": "fiction",
+      "createdAt": "Sat Nov 02 2024"
+    },
+    {
+      "id": "09ddef78-f8f3-4f18-9e8f-dbc477f28ffa",
+      "title": "Running",
+      "description": "Correr es bueno",
+      "image": "https://th.bing.com/th/id/OIP.S0YPMqSDSoGYYb4Zk_atagHaD4?rs=1&pid=ImgDetMain",
+      "category": "lifestyle",
+      "createdAt": "Sat Nov 02 2024",
+      "updatedAt": "Sat Nov 02 2024"
+    },
+    {
+      "id": "c65b38a0-8e51-4ca0-9ea0-c5cbe9b126de",
+      "title": "Meditación",
+      "description": "ohm",
+      "image": "https://th.bing.com/th/id/OIP.xY_peFUdxFqcGgddisXJOAHaE8?rs=1&pid=ImgDetMain",
+      "category": "lifestyle",
+      "createdAt": "Sat Nov 02 2024",
+      "updatedAt": null
     }
   ]
 }

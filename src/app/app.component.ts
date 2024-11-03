@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  @Input() routerLink: string = "";
   public title = 'Travel App';
+
+  @Input() routerLink: string = "";
 }

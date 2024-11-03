@@ -5,14 +5,14 @@ import { PostsService } from '../../services/posts-service.service';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from '../../sections/navigation/navigation.component';
 import { NavItemComponent } from '../../sections/nav-item/nav-item.component';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ModalContainerComponent } from '../../components/modal-container/modal-container.component';
 import { PostFormComponent } from '../../sections/post-form/post-form.component';
 import { ModalDismissReasons, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import PostCategory from '../../models/PostCategory';
 
 interface Tab {
-  id: string,
+  id: PostCategory,
   name: string,
   isActive: boolean,
   isDisabled: boolean
@@ -37,6 +37,7 @@ export class PostListComponent implements OnInit {
   public posts: Post[] = [];
   public modalRef?: NgbModalRef;
   public tabs: Tab[] = [];
+  public hide: boolean = true;
 
   @ViewChild('content') content!: TemplateRef<any>;
   @ViewChild(PostFormComponent) postFormComponent?: PostFormComponent;
@@ -59,13 +60,13 @@ export class PostListComponent implements OnInit {
         isDisabled: false
       },
       {
-        id: "meme",
+        id: "lifestyle",
         name: "Lifestyle",
         isActive: false,
         isDisabled: false
       },
       {
-        id: "hknowledge",
+        id: "meme",
         name: "Hidden knowledge",
         isActive: false,
         isDisabled: true
@@ -125,5 +126,22 @@ export class PostListComponent implements OnInit {
 
   public triggerSubmit() {
     this.postFormComponent?.onPostSubmit('create');
+  }
+
+  public showTheTruth() {
+    const idx = this.tabs.findIndex((t) => t.id === 'meme');
+    this.tabs[idx].isDisabled = true;
+    this.hide = false;
+  }
+
+  public hideTheTruth() {
+    const idx = this.tabs.findIndex((t) => t.id === 'meme');
+    this.tabs[idx].isDisabled = false;
+    this.hide = true;
+  }
+
+  public isNormalSection() {
+    const tab = this.getSelectedTab();
+    return (tab !== 'meme');
   }
 }
