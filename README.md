@@ -1,4 +1,4 @@
-# MyApp
+# Travel App
 
 Basic frontend project ***built with Angular***
 
