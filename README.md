@@ -5,7 +5,7 @@ Basic frontend project ***built with Angular***
 ## Author
 **José Luis Eguía Téllez**
 
-**jose.eguia.tellez**
+**jose.eguia.tellez CL 10**
 
 *Capability Backend*
 
